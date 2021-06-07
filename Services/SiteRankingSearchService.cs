@@ -18,11 +18,12 @@ namespace sitesweep.Services
             List<RankedResults> rankedResults = new List<RankedResults>();
             using(var httpClient = new HttpSearchClient())
             {
-               var result = await httpClient.GetAsync(searchCriteria.Url);
+               var searchUrl = $"{searchCriteria.Url}/{searchCriteria.SearchString}";
+               var response = await httpClient.GetAsync(searchUrl);
 
-               if(result.IsSuccessStatusCode)
+               if(response.IsSuccessStatusCode)
                {
-                   var body = result;
+                   var body = await response.Content.ReadAsStringAsync();
                } 
                else
                {
