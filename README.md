@@ -15,3 +15,8 @@
 > Feel free to try this fails to start the app on mac. Dotnet entrypoint hangs.  
 1. Run `docker build -t sitesweep .`
 1. Run `docker run sitesweep`
+
+ToDo:
+1. Purchase Graphics card at fair price. 
+    1. Run on windows. 
+        1. Add unit tests. 
