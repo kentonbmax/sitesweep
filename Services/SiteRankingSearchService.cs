@@ -50,6 +50,7 @@ namespace sitesweep.Services
             const string QUERY_LINK_STRING = "/url?q=";
 
             int rankCounter = default;
+            int totalLinkCounter = default;
             string result = default;
 
             if(string.IsNullOrWhiteSpace(rawContent))
@@ -62,6 +63,12 @@ namespace sitesweep.Services
                 {
                     if(anchorStrs[i].Contains(QUERY_LINK_STRING))
                     {
+                        totalLinkCounter++;
+                        if(totalLinkCounter == 100)
+                        {
+                            break;
+                        }
+                        
                         if(anchorStrs[i].ToLowerInvariant().Contains(searchString.ToLower()))
                         {
                             rankCounter++;
