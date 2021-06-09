@@ -7,6 +7,6 @@ namespace sitesweep.Services
 {
     public interface ISiteRankingSearchService
     {
-        Task<List<RankedResults>> LoopupRankedResults(SearchCriteria searchCriteria);
+        Task<RankedResults> LoopupRankedResults(SearchCriteria searchCriteria);
     }
 }

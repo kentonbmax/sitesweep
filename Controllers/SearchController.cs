@@ -25,7 +25,7 @@ namespace sitesweep.Controllers
                 return new BadRequestResult();
             }
             var rankingList = await _siteRankingSearchService.LoopupRankedResults(searchCriteria);
-            return Ok(searchCriteria);
+            return Ok(rankingList);
         }
     }
 }

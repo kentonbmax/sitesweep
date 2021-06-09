@@ -6,7 +6,7 @@ namespace sitesweep.Models
     public class SearchCriteria
     {
         [Required]
-        public string SearchString {get; set;}
+        public string Keywords {get; set;}
         
         [Required]
         [ValidateUrl]
