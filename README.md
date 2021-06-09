@@ -1,21 +1,20 @@
 # sitesweep
-> Note: url "http://www.infotrack.com not found. instead try https. 
+> Note: url "http://www.infotrack.com" not found. instead try https. 
 ## Build
 > Ensure net5 sdk installed. 
 1. run the following from terminal `dotnet build sitesweep.csproj`
 
 ## Debug
-> launch.json included. Assume VSCode 
 > [Swagger page](http://localhost:5000/swagger/index.html)
-1. Run the launch site sweep configuration. 
+1. Run the Launch Site Sweep configuration through VSC debugger. 
 
 ## Running the Api
 > All commands ran from terminal, assume path configured.
 ### Terminal
 > Ensure current dir = app working dir
-> not working requires env for Environment. Check docker.
 1. See Build section above
-1. Run `dotnet ./bin/debug/net5.0/sitesweep.dll`
+1. Run `dotnet run` 
+1. Note the port.
 ### Docker
 > Tested on Mac only
 1. Run `docker build -t sitesweep .`

@@ -9,6 +9,7 @@ using sitesweep.Services;
 namespace sitesweep.Controllers
 {
     [Route("api/[controller]")]
+    [ApiController]
     public class SearchController : Controller
     {
         private readonly ISiteRankingSearchService _siteRankingSearchService;
@@ -20,11 +21,8 @@ namespace sitesweep.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] SearchCriteria searchCriteria)
         {
-            if (!ModelState.IsValid)
-            {
-                return new BadRequestResult();
-            }
             var rankingList = await _siteRankingSearchService.LoopupRankedResults(searchCriteria);
+            throw new Exception("Test global middleware");
             return Ok(rankingList);
         }
     }
