@@ -14,4 +14,4 @@ FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS runtime
 WORKDIR /app
 EXPOSE 8080:5000
 COPY --from=build-env /app/out .
-#ENTRYPOINT ["dotnet", "sitesweep.dll"]
+ENTRYPOINT ["dotnet", "sitesweep.dll"]
